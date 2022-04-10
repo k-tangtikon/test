@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>สมัครสมาชิก </title>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" />
+    {{-- <script type="text/javascript" src="index.js"></script> --}}
+    <style>
+        .error {
+            color: red
+        }
+
+    </style>
+</head>
+
+<body class="antialiased">
+    <div class="container">
+        <!-- main app container -->
+        <div class="readersack">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 offset-md-3">
+                        <br><br><br><br>
+                        <h3>สมัครสมาชิก</h3>
+
+
+                        <form method="post" id="handleRegisterAjax" action="{{ url('do-register') }}" name="postform">
+                            <div class="form-group">
+                                <label>ชื่อ-นามสกุล</label>
+                                <input type="text" name="name" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label>ชื่อผู้ใช้</label>
+                                <input type="text" name="username" class="form-control" />
+                                @csrf
+                            </div>
+                            <div class="form-group">
+                                <label>รหัสผ่าน</label>
+                                <input type="password" name="password" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label>ยืนยันรหัสผ่าน</label>
+                                <input type="password" name="confirm_password" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary btn-block">สมัครสมาชิก</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- credits -->
+        <div class="text-center">
+            <p>
+                <a href="{{ url('login') }}" target="_top">back to login</a>
+            </p>
+
+        </div>
+    </div>
+    <script>
+        $(function() {
+
+            $(document).on("submit", "#handleRegisterAjax", function() {
+                var e = this;
+
+                $(this).find("[type='submit']").html("REGISTER...");
+                $.post($(this).attr('action'), $(this).serialize(), function(data) {
+
+                    $(e).find("[type='submit']").html("REGISTER");
+                    if (data.status) {
+                        alert(data.msg)
+                        window.location = data.redirect_location;
+                    }
+
+
+                }).fail(function(response) {
+
+                    $(e).find("[type='submit']").html("LOGIN");
+                    $(".alert").remove();
+                    var erroJson = JSON.parse(response.responseText);
+                    for (var err in erroJson) {
+                        for (var errstr of erroJson[err])
+                            $("[name='" + err + "']").after("<div class='alert alert-danger'>" +
+                                errstr + "</div>");
+                    }
+
+                });
+                return false;
+            });
+
+        });
+    </script>
+</body>
+
+</html>

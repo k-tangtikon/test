@@ -1,0 +1,57 @@
+
+div.head1{
+    font-size: 22px;
+    font-weight: bold;
+    
+    color:#212F3C;
+}
+div.txt-profile{
+    font-size: 32px;
+    font-weight: bold;
+    color:#4A235A;
+    
+}
+div.txt-pr{
+    font-size: 24px;
+    font-weight: bold;
+    color: #212F3C;
+    
+}
+div.text-head{
+    font-size: 22px;
+    display:inline-block;
+    font-weight: bold;
+    color: #212F3C;
+    
+}
+
+div.text-con{
+    font-size: 20px;
+    color:#2E4053;
+}
+
+div.text-edit{
+    font-size: 16px;
+    color:#641E16;
+    font-weight: bold;
+}
+
+div.text-tab{
+    padding-left: 5em;
+    font-size: 22px;
+    
+}
+
+.navbar {
+    margin-bottom: 50px;
+    border-radius: 0;
+    
+}
+div#myNavbar.collapse.navbar-collapse {
+	text-align: center;
+}
+ul.nav.navbar-nav {
+	display: inline-block;
+	float: none;
+    
+}
