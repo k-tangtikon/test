@@ -110,6 +110,6 @@ class checkController extends Controller
     function logoutProfile()
     {
         \Auth::logout();
-        return redirect("pagelogin")->with('success', 'Logout successfully');;
+        return redirect("myprofile")->with('success', 'Logout successfully');;
     }
 }

@@ -44,8 +44,8 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{url('logoutprofile')}}">
-                        <div class="txtnav">Logout</div>
+                    <a class="nav-link" href="{{url('pagelogin')}}">
+                        <div class="txtnav">Login</div>
                     </a>
                 </li>
 

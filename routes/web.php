@@ -66,3 +66,5 @@ Route::get('/edu_pub', [MyprofileController::class, 'select_edu']);
 Route::get('/work_pub', [MyprofileController::class, 'select_work']);
 Route::get('/skills_pub', [MyprofileController::class, 'select_skills']);
 Route::get('/contact_pub', [MyprofileController::class, 'select_contact']);
+
+Route::get('/', [MyprofileController::class, 'select']);
