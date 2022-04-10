@@ -11,7 +11,8 @@
             </a>
         </div>
         <div class="text-con">
-            {{ $profile->skills }}
+            {{-- {{ $profile->skills }} --}}
+            {!! nl2br(e($profile->skills)) !!}
 
         </div>
     </div>

@@ -11,7 +11,8 @@
             </a>
         </div>
         <div class="text-con">
-            {{ $profile->exp }}
+            {{-- {{ $profile->exp }} --}}
+            {!! nl2br(e($profile->exp)) !!}
         </div>
     </div>
 </div>
