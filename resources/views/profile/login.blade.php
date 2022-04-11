@@ -9,7 +9,7 @@
                 <div class="row">
                     <div class="col-md-4 offset-md-4 text-center">
                         <br><br><br><br>
-                        <h3>เข้าสู่ระบบจัดการโปรไฟล์55</h3>
+                        <h3>เข้าสู่ระบบจัดการโปรไฟล์</h3>
                         <div id="errors-list"></div>
                         <form method="post" id="handleAjax" action="{{ url('check-login-profile') }}" name="postform">
                             <div class="form-group mb-3">
